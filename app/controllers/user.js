@@ -2,10 +2,11 @@ app.controller('UserCtrl', ['$scope', 'User', function($scope, User) {
 
     $scope.users = User.query();
     $scope.isForm = false;
+    // $scope.isForm = true;
 
     $scope.edit = function(id) {
     	$scope.user = User.get({ id: id });
-    	$scope.isForm = true;
+    	$scope.isForm = false;
     };
 
     $scope.save = function() {
