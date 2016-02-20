@@ -1,7 +1,7 @@
 exports.install = function() {
 	F.restful('/users/', [], json_user_query, json_user_get, json_user_save, json_user_delete);
 	// ... is same as:
-	// F.route('/user/', json_user_query);
+	// F.route('/users/', json_user_query);
 	// F.route('/user/{id}/', json_user_get);
 	// F.route('/user/{id}/', json_user_save, ['post', 'json']);
     // F.route('/user/{id}/', json_user_delete, ['delete']);
@@ -24,6 +24,7 @@ function json_user_query() {
 
 	User.find(function(err, docs) {
 		self.json(docs);
+		console.log(docs);
 	});
 }
 

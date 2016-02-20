@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+// var Schema = mongoose.Schema;
 
-var userSchema = new Schema({
+var userSchema = mongoose.Schema({
   alias: String,
   ip: String,
   email: String,
@@ -10,10 +10,10 @@ var userSchema = new Schema({
 });
 
 exports.name = 'user';
-exports.Schema = mongoose.model('User', userSchema);
+exports.Schema = mongoose.model('user', userSchema);
 
 // compile our model
-var Person = mongoose.model('User', userSchema);
+// var Person = mongoose.model('User', userSchema);
 
 // create a document
 // var record = new Person({
